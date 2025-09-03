@@ -52,36 +52,36 @@ A Spring Boot microservice that manages `SupportTicket` entities with full CRUD 
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/your-username/support-ticket.git
-cd support-ticket
+cd support-ticket```
 
 ### 2. Clone the repository
-docker compose up -d
+```docker compose up -d```
 
 ### 3. Run the application
-mvn spring-boot:run
+```mvn spring-boot:run```
 
 ### 4. Run all tests
-mvn clean verify
+```mvn clean verify```
 
 ### 5. Generate coverage report
-open target/site/jacoco/index.html
+```open target/site/jacoco/index.html```
 
 ##EXAMPLES
 
 ### Create a ticket
-curl -X POST http://localhost:8080/tickets \
+```curl -X POST http://localhost:8080/tickets \
   -H "Content-Type: application/json" \
-  -d '{"title":"My ticket","description":"This is a ticket"}'
+  -d '{"title":"My ticket","description":"This is a ticket"}'```
 
 ### Get a ticket
-curl http://localhost:8080/tickets/{id}
+```curl http://localhost:8080/tickets/{id}```
 
 ### Update a ticket
-curl -X PUT http://localhost:8080/tickets/{id} \
+```curl -X PUT http://localhost:8080/tickets/{id} \
   -H "Content-Type: application/json" \
-  -d '{"status":"IN_PROGRESS"}'
+  -d '{"status":"IN_PROGRESS"}'```
 
 ### Delete a ticket
-curl -X DELETE http://localhost:8080/tickets/{id} -i
+```curl -X DELETE http://localhost:8080/tickets/{id} -i```
 
 
