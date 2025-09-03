@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SupportTicketController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">support-ticket</a> &gt; <a href="index.source.html" class="el_package">com.example.ticket.api</a> &gt; <span class="el_source">SupportTicketController.java</span></div><h1>SupportTicketController.java</h1><pre class="source lang-java linenums">package com.example.ticket.api;
+
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
+import com.example.ticket.service.SupportTicketService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.util.UUID;
+
+@RestController
+@RequestMapping(&quot;/tickets&quot;)
+@RequiredArgsConstructor
+public class SupportTicketController {
+
+    private final SupportTicketService service;
+
+    @PostMapping
+    public ResponseEntity&lt;SupportTicketResponse&gt; create(@Valid @RequestBody SupportTicketRequest req) {
+<span class="fc" id="L24">        SupportTicketResponse created = service.create(req);</span>
+<span class="fc" id="L25">        return ResponseEntity</span>
+<span class="fc" id="L26">                .created(URI.create(&quot;/tickets/&quot; + created.id()))</span>
+<span class="fc" id="L27">                .body(created);</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public SupportTicketResponse get(@PathVariable UUID id) {
+<span class="nc" id="L32">        return service.get(id);</span>
+    }
+
+    @PutMapping(&quot;/{id}&quot;)
+    public SupportTicketResponse update(@PathVariable UUID id, @Valid @RequestBody SupportTicketUpdateRequest req) {
+<span class="nc" id="L37">        return service.update(id, req);</span>
+    }
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; delete(@PathVariable UUID id) {
+<span class="nc" id="L42">        service.delete(id);</span>
+<span class="nc" id="L43">        return ResponseEntity.noContent().build();</span>
+    }
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -23,9 +23,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(controllers = SupportTicketController.class)
 class SupportTicketControllerTest {
 
-    @Autowired MockMvc mvc;
-    @Autowired ObjectMapper om;
-    @MockBean SupportTicketService service;
+    @Autowired
+    MockMvc mvc;
+
+    @Autowired
+    ObjectMapper om;
+
+    @MockBean
+    SupportTicketService service;
 
     @Test
     void create_valid_201() throws Exception {

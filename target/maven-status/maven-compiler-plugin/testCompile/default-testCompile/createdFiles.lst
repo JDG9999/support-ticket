@@ -1,0 +1,3 @@
+com\example\ticket\api\SupportTicketControllerTest.class
+com\example\ticket\it\KafkaPublishIT.class
+com\example\ticket\service\SupportTicketServiceTest.class

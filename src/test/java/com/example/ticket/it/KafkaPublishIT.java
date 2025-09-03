@@ -25,9 +25,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 @EmbeddedKafka(partitions = 1, topics = { "ticket-events" })
 class KafkaPublishIT {
 
-    @Autowired private org.springframework.test.web.reactive.server.WebTestClient webClient;
-    @Autowired private EmbeddedKafkaBroker broker;
-    @Autowired private ObjectMapper om;
+    @Autowired
+    private org.springframework.test.web.reactive.server.WebTestClient webClient;
+
+    @Autowired
+    private EmbeddedKafkaBroker broker;
+
+    @Autowired
+    private ObjectMapper om;
 
     @Test
     void post_creates_ticket_and_emits_event() {

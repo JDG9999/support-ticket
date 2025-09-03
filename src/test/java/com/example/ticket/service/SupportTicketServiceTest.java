@@ -22,10 +22,17 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class SupportTicketServiceTest {
 
-    @Mock SupportTicketRepository repo;
-    @Mock TicketEventPublisher publisher;
-    @InjectMocks SupportTicketService service;
-    @Spy SupportTicketMapper mapper = new SupportTicketMapper();
+    @Mock
+    SupportTicketRepository repo;
+
+    @Mock
+    TicketEventPublisher publisher;
+
+    @InjectMocks
+    SupportTicketService service;
+
+    @Spy
+    SupportTicketMapper mapper = new SupportTicketMapper();
 
     @Test
     void create_persists_and_publishes() {

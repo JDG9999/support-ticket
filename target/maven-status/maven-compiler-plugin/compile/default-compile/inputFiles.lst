@@ -1,0 +1,16 @@
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\api\SupportTicketController.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\messaging\TicketEventPublisher.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\service\SupportTicketService.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\dto\SupportTicketRequest.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\dto\SupportTicketResponse.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\repo\SupportTicketRepository.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\entity\SupportTicket.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\service\TicketNotFoundException.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\SupportTicketApplication.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\messaging\KafkaTopicConfig.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\dto\SupportTicketUpdateRequest.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\util\SupportTicketMapper.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\entity\TicketStatus.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\messaging\EventType.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\messaging\TicketEvent.java
+D:\Documentos\intellij-projects\support-ticket\src\main\java\com\example\ticket\api\GlobalExceptionHandler.java

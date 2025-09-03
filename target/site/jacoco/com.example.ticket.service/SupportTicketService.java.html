@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SupportTicketService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">support-ticket</a> &gt; <a href="index.source.html" class="el_package">com.example.ticket.service</a> &gt; <span class="el_source">SupportTicketService.java</span></div><h1>SupportTicketService.java</h1><pre class="source lang-java linenums">package com.example.ticket.service;
+
+import com.example.ticket.util.SupportTicketMapper;
+import com.example.ticket.entity.SupportTicket;
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
+import com.example.ticket.messaging.*;
+import com.example.ticket.repo.SupportTicketRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.Instant;
+import java.util.UUID;
+
+@Service
+@RequiredArgsConstructor
+public class SupportTicketService {
+
+    private final SupportTicketRepository repo;
+    private final SupportTicketMapper mapper;
+    private final TicketEventPublisher publisher;
+
+    @Transactional
+    public SupportTicketResponse create(SupportTicketRequest req) {
+<span class="fc" id="L27">        SupportTicket t = SupportTicket.builder()</span>
+<span class="fc" id="L28">                .title(req.title())</span>
+<span class="fc" id="L29">                .description(req.description())</span>
+<span class="fc" id="L30">                .build();</span>
+<span class="fc" id="L31">        t = repo.save(t);</span>
+<span class="fc" id="L32">        SupportTicketResponse resp = mapper.toResponse(t);</span>
+<span class="fc" id="L33">        publisher.publish(new TicketEvent(EventType.CREATED, t.getId(), Instant.now(), resp));</span>
+<span class="fc" id="L34">        return resp;</span>
+    }
+
+    @Transactional(readOnly = true)
+    public SupportTicketResponse get(UUID id) {
+<span class="pc" id="L39">        SupportTicket t = repo.findById(id).orElseThrow(() -&gt; new TicketNotFoundException(id));</span>
+<span class="nc" id="L40">        return mapper.toResponse(t);</span>
+    }
+
+    @Transactional
+    public SupportTicketResponse update(UUID id, SupportTicketUpdateRequest req) {
+<span class="pc" id="L45">        SupportTicket t = repo.findById(id).orElseThrow(() -&gt; new TicketNotFoundException(id));</span>
+<span class="fc" id="L46">        mapper.applyUpdate(t, req);</span>
+<span class="fc" id="L47">        t = repo.save(t);</span>
+<span class="fc" id="L48">        SupportTicketResponse resp = mapper.toResponse(t);</span>
+<span class="fc" id="L49">        publisher.publish(new TicketEvent(EventType.UPDATED, t.getId(), Instant.now(), resp));</span>
+<span class="fc" id="L50">        return resp;</span>
+    }
+
+    @Transactional
+    public void delete(UUID id) {
+<span class="nc" id="L55">        SupportTicket t = repo.findById(id).orElseThrow(() -&gt; new TicketNotFoundException(id));</span>
+<span class="nc" id="L56">        repo.delete(t);</span>
+<span class="nc" id="L57">        publisher.publish(new TicketEvent(EventType.DELETED, id, Instant.now(),</span>
+<span class="nc" id="L58">                new SupportTicketResponse(id, t.getTitle(), t.getDescription(), t.getStatus(), t.getCreatedAt(), t.getUpdatedAt())));</span>
+<span class="nc" id="L59">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

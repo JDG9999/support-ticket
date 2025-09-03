@@ -1,0 +1,17 @@
+com\example\ticket\entity\SupportTicket$SupportTicketBuilder.class
+com\example\ticket\util\SupportTicketMapper.class
+com\example\ticket\service\TicketNotFoundException.class
+com\example\ticket\messaging\TicketEventPublisher.class
+com\example\ticket\entity\TicketStatus.class
+com\example\ticket\messaging\TicketEvent.class
+com\example\ticket\SupportTicketApplication.class
+com\example\ticket\dto\SupportTicketRequest.class
+com\example\ticket\dto\SupportTicketResponse.class
+com\example\ticket\dto\SupportTicketUpdateRequest.class
+com\example\ticket\entity\SupportTicket.class
+com\example\ticket\repo\SupportTicketRepository.class
+com\example\ticket\messaging\EventType.class
+com\example\ticket\messaging\KafkaTopicConfig.class
+com\example\ticket\service\SupportTicketService.class
+com\example\ticket\api\GlobalExceptionHandler.class
+com\example\ticket\api\SupportTicketController.class
