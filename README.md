@@ -67,7 +67,9 @@ cd support-ticket
 ### 5. Generate coverage report
 `open target/site/jacoco/index.html`
 
-##EXAMPLES
+---
+
+## EXAMPLES
 
 ### Create a ticket
 ```curl -X POST http://localhost:8080/tickets \
