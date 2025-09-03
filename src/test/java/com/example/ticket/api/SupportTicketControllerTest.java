@@ -1,7 +1,8 @@
 package com.example.ticket.api;
 
-import com.example.ticket.api.dto.*;
-import com.example.ticket.domain.TicketStatus;
+import com.example.ticket.entity.TicketStatus;
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketResponse;
 import com.example.ticket.service.SupportTicketService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;

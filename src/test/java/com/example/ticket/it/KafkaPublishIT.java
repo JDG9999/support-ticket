@@ -1,6 +1,6 @@
 package com.example.ticket.it;
 
-import com.example.ticket.api.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketRequest;
 import com.example.ticket.messaging.TicketEvent;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerRecord;

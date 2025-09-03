@@ -1,4 +1,4 @@
-package com.example.ticket.domain;
+package com.example.ticket.entity;
 
 public enum TicketStatus {
     IN_PROGRESS,

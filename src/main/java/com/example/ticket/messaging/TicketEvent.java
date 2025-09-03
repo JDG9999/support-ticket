@@ -1,6 +1,6 @@
 package com.example.ticket.messaging;
 
-import com.example.ticket.api.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketResponse;
 import java.time.Instant;
 import java.util.UUID;
 

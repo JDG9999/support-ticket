@@ -1,6 +1,8 @@
 package com.example.ticket.api;
 
-import com.example.ticket.api.dto.*;
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
 import com.example.ticket.service.SupportTicketService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

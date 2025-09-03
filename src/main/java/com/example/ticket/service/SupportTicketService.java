@@ -1,8 +1,10 @@
 package com.example.ticket.service;
 
-import com.example.ticket.api.SupportTicketMapper;
-import com.example.ticket.api.dto.*;
-import com.example.ticket.domain.SupportTicket;
+import com.example.ticket.util.SupportTicketMapper;
+import com.example.ticket.entity.SupportTicket;
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
 import com.example.ticket.messaging.*;
 import com.example.ticket.repo.SupportTicketRepository;
 import lombok.RequiredArgsConstructor;

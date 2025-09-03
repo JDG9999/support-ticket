@@ -1,10 +1,10 @@
 package com.example.ticket.service;
 
-import com.example.ticket.api.SupportTicketMapper;
-import com.example.ticket.api.dto.SupportTicketRequest;
-import com.example.ticket.api.dto.SupportTicketUpdateRequest;
-import com.example.ticket.domain.SupportTicket;
-import com.example.ticket.domain.TicketStatus;
+import com.example.ticket.util.SupportTicketMapper;
+import com.example.ticket.dto.SupportTicketRequest;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
+import com.example.ticket.entity.SupportTicket;
+import com.example.ticket.entity.TicketStatus;
 import com.example.ticket.messaging.TicketEventPublisher;
 import com.example.ticket.repo.SupportTicketRepository;
 import org.junit.jupiter.api.Test;

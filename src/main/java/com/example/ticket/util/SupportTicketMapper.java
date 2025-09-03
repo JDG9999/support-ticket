@@ -1,7 +1,8 @@
-package com.example.ticket.api;
+package com.example.ticket.util;
 
-import com.example.ticket.api.dto.*;
-import com.example.ticket.domain.SupportTicket;
+import com.example.ticket.entity.SupportTicket;
+import com.example.ticket.dto.SupportTicketResponse;
+import com.example.ticket.dto.SupportTicketUpdateRequest;
 import org.springframework.stereotype.Component;
 
 @Component

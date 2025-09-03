@@ -1,6 +1,6 @@
-package com.example.ticket.api.dto;
+package com.example.ticket.dto;
 
-import com.example.ticket.domain.TicketStatus;
+import com.example.ticket.entity.TicketStatus;
 import java.time.Instant;
 import java.util.UUID;
 

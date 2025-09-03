@@ -1,4 +1,4 @@
-package com.example.ticket.api.dto;
+package com.example.ticket.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
